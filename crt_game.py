@@ -38,7 +38,7 @@ def render_text(text, font_size, color, position):
 #############
 ########   MISC VISUAL
 
-bg_image = pygame.image.load('/home/jeditor/Game/images/xray.jpg')
+bg_image = pygame.image.load('/home/jeditor/Imagine_Py_game/images/xray.jpg')
 bg_image = pygame.transform.scale(bg_image, (screen.get_width(), screen.get_height()))
 
 black = (0, 0, 0)
@@ -61,15 +61,15 @@ class Organ:
             return False
 
 organs = [
-    Organ("organ1",pygame.image.load('/home/jeditor/Game/images/organs/obj1.png')),
-    Organ("organ2",pygame.image.load('/home/jeditor/Game/images/organs/obj2.png')),
-    Organ("organ3",pygame.image.load('/home/jeditor/Game/images/organs/obj3.png')),
-    Organ("organ4",pygame.image.load('/home/jeditor/Game/images/organs/obj4.png')),
-    Organ("organ5",pygame.image.load('/home/jeditor/Game/images/organs/obj5.png')),
-    Organ("organ6",pygame.image.load('/home/jeditor/Game/images/organs/obj6.png')),
-    Organ("organ7",pygame.image.load('/home/jeditor/Game/images/organs/obj7.png')),
-    Organ("organ8",pygame.image.load('/home/jeditor/Game/images/organs/obj8.png')),
-    Organ("organ9",pygame.image.load('/home/jeditor/Game/images/organs/obj9.png')),
+    Organ("organ1",pygame.image.load('/home/jeditor/Imagine_Py_game/images/organs/obj1.png')),
+    Organ("organ2",pygame.image.load('/home/jeditor/Imagine_Py_game/images/organs/obj2.png')),
+    Organ("organ3",pygame.image.load('/home/jeditor/Imagine_Py_game/images/organs/obj3.png')),
+    Organ("organ4",pygame.image.load('/home/jeditor/Imagine_Py_game/images/organs/obj4.png')),
+    Organ("organ5",pygame.image.load('/home/jeditor/Imagine_Py_game/images/organs/obj5.png')),
+    Organ("organ6",pygame.image.load('/home/jeditor/Imagine_Py_game/images/organs/obj6.png')),
+    Organ("organ7",pygame.image.load('/home/jeditor/Imagine_Py_game/images/organs/obj7.png')),
+    Organ("organ8",pygame.image.load('/home/jeditor/Imagine_Py_game/images/organs/obj8.png')),
+    Organ("organ9",pygame.image.load('/home/jeditor/Imagine_Py_game/images/organs/obj9.png')),
 ]
 
 #############
