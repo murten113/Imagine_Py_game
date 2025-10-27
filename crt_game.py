@@ -1,7 +1,7 @@
 import pygame
 import sys
 import RPi.GPIO as GPIO
-from mfrc522 import MFRC522
+from mfrc522 import SimpleMFRC522
 
 pygame.init()
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
@@ -20,9 +20,9 @@ GPIO.setwarnings(False)
 RST_PIN = 25  # Reset (Shared for all modules)
 
 # Create an instance for each RC522 module
-reader1 = MFRC522(bus=0, device=0, pin_rst=RST_PIN)  # SPI0, CE0 (GPIO 8)
-reader2 = MFRC522(bus=0, device=1, pin_rst=RST_PIN)  # SPI0, CE1 (GPIO 7)
-reader3 = MFRC522(bus=1, device=0, pin_rst=RST_PIN)  # SPI1, CE0 (GPIO 18)
+reader1 = SimpleMFRC522()  # SPI0, CE0 (GPIO 8)   #### bus=0, device=0, pin_rst=RST_PIN
+#reader2 = SimpleMFRC522(bus=0, device=1, pin_rst=RST_PIN)  # SPI0, CE1 (GPIO 7)
+#reader3 = SimpleMFRC522(bus=1, device=0, pin_rst=RST_PIN)  # SPI1, CE0 (GPIO 18)
 
 #############
 ########   TEXT
@@ -124,14 +124,14 @@ while run:
 
     screen.blit(bg_image, (0, 0))
 
-    # Read RFID tags
-    status1, TagType1 = reader1.MFRC522_Request(reader1.PICC_REQIDL)
-    if status1 == reader1.MI_OK:
-        print("1 yes")
-        status1, uid1 = reader1.MFRC522_Anticoll()
-        if status1 == reader1.MI_OK:
-            tag_id1 = str(uid1[0]) + str(uid1[1]) + str(uid1[2]) + str(uid1[3])
-            print(f"Reader 1: {tag_id1}")
+    # # Read RFID tags
+    # status1, TagType1 = reader1.MFRC522_Request(reader1.PICC_REQIDL)
+    # if status1 == reader1.MI_OK:
+    #     print("1 yes")
+    #     status1, uid1 = reader1.MFRC522_Anticoll()
+    #     if status1 == reader1.MI_OK:
+    #         tag_id1 = str(uid1[0]) + str(uid1[1]) + str(uid1[2]) + str(uid1[3])
+    #         print(f"Reader 1: {tag_id1}")
 
 #    status2, TagType2 = reader2.MFRC522_Request(reader2.PICC_REQIDL)
 #    if status2 == reader2.MI_OK:
