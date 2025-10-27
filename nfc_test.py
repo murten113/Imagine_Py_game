@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
-from mfrc522 import NewSimpleMFRC522
+from mfrc522 import SimpleMFRC522
 
 RST_PIN = 22  # Reset (Shared for all modules)
-reader1 = NewSimpleMFRC522()
+reader1 = SimpleMFRC522()
 
 try:
     print("Place tag...")
