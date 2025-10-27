@@ -1,14 +1,15 @@
 import RPi.GPIO as GPIO
-from mfrc522 import MFRC522
+import mfrc522
 
 RST_PIN = 22  # Reset (Shared for all modules)
-reader1 = MFRC522(bus=0, device=0, pin_mode=24, pin_rst=RST_PIN)
+reader1 = mfrc522.SimpleMFRC522()
 
 try:
     print("Place tag...")
-    status1, TagType1 = reader1.MFRC522_Request(reader1.PICC_REQIDL)
-    if status1 == reader1.MI_OK:
-        print("1 yes")
-    print("klaar")
+    id = reader1.read()
+    x = id.split(",")
+    x1 = x[0].split("(")
+    x2 = x1[1]
+    print(x2)
 finally:
     GPIO.cleanup()
