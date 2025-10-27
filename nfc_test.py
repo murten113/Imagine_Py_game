@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from mfrc522 import MFRC522
 
-RST_PIN = 25  # Reset (Shared for all modules)
+RST_PIN = 22  # Reset (Shared for all modules)
 reader1 = MFRC522(bus=0, device=0, pin_rst=RST_PIN)
 
 try:
