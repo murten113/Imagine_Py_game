@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
-from mfrc522 import SimpleMFRC522
+from mfrc522 import MFRC522
 
-reader = SimpleMFRC522()
+reader = MFRC522()
 
 try:
     print("Place tag...")
