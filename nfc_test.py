@@ -8,10 +8,13 @@ try:
     print("Place tag...")
     id, text = reader.read()
 
-    # Find all numeric sequences in the text
+    # Clean up the text — remove nulls, newlines, and extra spaces
+    text = text.strip().replace('\x00', '')
+
+    # Find all sequences of digits
     numbers = re.findall(r'\d+', text)
 
-    if numbers:  # If at least one number is found
+    if numbers:
         last_number = numbers[-1]
         print("Last number:", last_number)
     else:
