@@ -7,6 +7,6 @@ try:
     print("Place tag...")
     id,text = reader.read()
     print(id)
-    print(text)
+    print(str(text) + "ey")
 finally:
     GPIO.cleanup()
