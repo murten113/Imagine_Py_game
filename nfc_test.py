@@ -3,8 +3,7 @@ from mfrc522 import SimpleMFRC522
 
 RST_PIN = 22
 
-reader1 = SimpleMFRC522(bus=0, device=0, pin_rst=RST_PIN)
-reader2 = SimpleMFRC522(bus=1, device=0, pin_rst=RST_PIN)
+reader1 = SimpleMFRC522(0)
 
 try:
     print("Place tag...")
