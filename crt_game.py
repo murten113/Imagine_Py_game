@@ -125,12 +125,13 @@ while run:
     screen.blit(bg_image, (0, 0))
 
     # Read RFID tags
-#    status1, TagType1 = reader1.MFRC522_Request(reader1.PICC_REQIDL)
-#    if status1 == reader1.MI_OK:
-#        status1, uid1 = reader1.MFRC522_Anticoll()
-#        if status1 == reader1.MI_OK:
-#            tag_id1 = str(uid1[0]) + str(uid1[1]) + str(uid1[2]) + str(uid1[3])
-#            print(f"Reader 1: {tag_id1}")
+    status1, TagType1 = reader1.MFRC522_Request(reader1.PICC_REQIDL)
+    if status1 == reader1.MI_OK:
+        print("1 yes")
+        status1, uid1 = reader1.MFRC522_Anticoll()
+        if status1 == reader1.MI_OK:
+            tag_id1 = str(uid1[0]) + str(uid1[1]) + str(uid1[2]) + str(uid1[3])
+            print(f"Reader 1: {tag_id1}")
 
 #    status2, TagType2 = reader2.MFRC522_Request(reader2.PICC_REQIDL)
 #    if status2 == reader2.MI_OK:
